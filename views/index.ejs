@@ -1,0 +1,21 @@
+<!-- @format -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles/main.css" />
+		<link rel="stylesheet" href="styles/modal.css" />
+		<title>Weather Today</title>
+	</head>
+	<body>
+		<%- include('partials/header.ejs') %> <% if (weather && weather.location && weather.current) { %> <%- include('partials/result.ejs') %> <% } else { %>
+		<main>
+			<div class="hero-section">
+				<h1 class="hero-title">Your Weather, Right Now</h1>
+				<p class="hero-subtitle">Get instant, accurate weather updates for any location worldwide. Simple, fast, and reliable weather forecasting at your fingertips.</p>
+			</div>
+		</main>
+		<% } %>
+	</body>
+</html>

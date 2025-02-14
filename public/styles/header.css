@@ -1,0 +1,155 @@
+/** @format */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Segoe UI", sans-serif;
+}
+
+header {
+	background-color: transparent;
+	padding: 1.5rem;
+}
+
+.header-container {
+	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+	background-color: #393e46;
+}
+
+.logo {
+	position: absolute;
+	left: -15%;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 2;
+}
+
+.logo img {
+	height: 30px;
+	width: 300px;
+}
+
+.navbar {
+	position: relative;
+	width: 800px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.8rem 0.8rem;
+	background: #eeeeee;
+	border-radius: 50px;
+}
+
+.search-box {
+	flex: 1;
+	margin-right: 0.5rem;
+}
+
+.search-box form {
+	display: flex;
+	gap: 1rem;
+}
+
+.search-box input {
+	flex: 1;
+	padding: 0.8rem 1.2rem;
+	border: 1px solid #ddd;
+	border-radius: 48px;
+	font-size: 1rem;
+	transition: border-color 0.3s;
+}
+
+.search-box button {
+	padding: 0.8rem 1.5rem;
+	color: #222831;
+	background: #00adb5;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+	transition: background 0.3s;
+}
+
+.search-box button:hover {
+	background: #393e46;
+	color: #00adb5;
+}
+
+.nav-links {
+	display: flex;
+	list-style: none;
+	gap: 2rem;
+}
+
+.nav-links a {
+	text-decoration: none;
+	color: #333;
+	font-weight: 500;
+	transition: color 0.3s;
+	padding: 0.5rem 1rem;
+	border-radius: 20px;
+}
+
+.nav-links a:hover {
+	color: #00adb5;
+}
+
+@media screen and (max-width: 768px) {
+	.header-container {
+		padding: 1rem;
+	}
+
+	.logo {
+		position: static;
+		transform: none;
+		margin-bottom: 1rem;
+	}
+
+	.navbar {
+		flex-direction: column;
+		padding: 1rem;
+		border-radius: 30px;
+		gap: 1rem;
+		width: 100%;
+	}
+
+	.search-box {
+		margin-right: 0;
+		width: 100%;
+	}
+
+	.nav-links {
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.navbar {
+		border-radius: 25px;
+	}
+
+	.search-box form {
+		flex-direction: column;
+	}
+
+	.search-box input,
+	.search-box button {
+		width: 100%;
+	}
+
+	.message-box {
+		padding: 1rem;
+	}
+
+	.message-box h2 {
+		font-size: 1.5rem;
+	}
+}

@@ -1,0 +1,66 @@
+<!-- @format -->
+
+<header>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="styles/header.css" />
+	<link rel="stylesheet" href="styles/modal.css" />
+	<link rel="stylesheet" href="styles/result.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+	<div class="header-container">
+		<div class="logo">
+			<a href="/"><img src="/images/LOGO.png" alt="Weather App Logo" /></a>
+		</div>
+		<nav class="navbar">
+			<div class="search-box">
+				<form action="/weather" method="POST">
+					<input type="text" name="location" class="search-input" placeholder="Enter location" />
+					<button type="submit" class="search-btn">
+						<i class="fas fa-search"></i>
+					</button>
+				</form>
+			</div>
+		</nav>
+
+		<% if ( weather.error) { %>
+		<div id="errorModal" class="modal show">
+			<div class="modal-content error-modal">
+				<span class="close">&times;</span>
+				<div class="error-icon">⚠️</div>
+				<h2>Error Occurred</h2>
+				<div class="error-message"><%= weatherError %></div>
+			</div>
+		</div>
+		<% } %>
+	</div>
+</header>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const modal = document.getElementById("errorModal");
+		const closeButtons = document.getElementsByClassName("close");
+
+		if (modal && closeButtons.length > 0) {
+			const closeButton = closeButtons[0];
+
+			// Close button handler
+			closeButton.onclick = function () {
+				modal.classList.remove("show");
+				setTimeout(() => {
+					modal.style.display = "none";
+				}, 300);
+			};
+
+			// Click outside modal handler
+			window.onclick = function (event) {
+				if (event.target == modal) {
+					modal.classList.remove("show");
+					setTimeout(() => {
+						modal.style.display = "none";
+					}, 300);
+				}
+			};
+		}
+	});
+</script>

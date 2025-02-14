@@ -1,0 +1,33 @@
+<!-- @format -->
+<body>
+	<div class="weather-card <%= weatherDescription %>">
+		<div class="weather-header">
+			<h2><%= weather.location.name %>, <%= weather.location.country %></h2>
+			<p class="observation-time"><%= weather.current.observation_time %></p>
+		</div>
+		<div class="weather-details">
+			<div class="weather-info">
+				<p class="weather-description"><%= weather.current.weather_descriptions[0] %></p>
+				<p class="temperature"><%= weather.current.temperature %>°C</p>
+			</div>
+			<div class="weather-stats">
+				<p>
+					<span>Feels like:</span>
+					<%= weather.current.feelslike %>°C
+				</p>
+				<p>
+					<span>Humidity:</span>
+					<%= weather.current.humidity %>%
+				</p>
+				<p>
+					<span>Precipitation:</span>
+					<%= weather.current.precip %> mm
+				</p>
+				<p>
+					<span>Wind:</span>
+					<%= weather.current.wind_dir %>
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
